@@ -5,6 +5,12 @@ from PIL import Image, ImageDraw, ImageFont
 import argparse
 import textwrap
 
+def get_jarvis_path():
+    """Get the path to the jarvis.png file."""
+    # Look in the same directory as this module
+    module_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(module_dir, "static", "jarvis.png")
+
 def wrap_text(text, font, max_width, draw):
     """Wrap text to fit within the specified width."""
     words = text.split()
@@ -55,9 +61,8 @@ def get_text_dimensions(lines, font, draw, line_spacing=1.2):
 def create_jarvis_image(text, output_dir="~/jarvis"):
     """Create a Jarvis image with text overlay in the white area."""
     
-    # Get the directory of this script to find jarvis.png
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    jarvis_path = os.path.join(script_dir, "static", "jarvis.png")
+    # Get the path to the jarvis.png file
+    jarvis_path = get_jarvis_path()
     
     if not os.path.exists(jarvis_path):
         raise FileNotFoundError(f"Jarvis image not found at {jarvis_path}")

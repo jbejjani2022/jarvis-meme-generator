@@ -9,7 +9,7 @@ with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="jarvis-meme-generator",
-    version="1.0.1",
+    version="1.0.4",
     author="Joey Bejjani",
     author_email="jbejjani2022@gmail.com",
     description="Generate custom Jarvis memes",
@@ -35,12 +35,12 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "jarvis=jarvis_generator:main",
+            "jarvis=jarvis_meme_generator:main",
         ],
     },
     include_package_data=True,
     package_data={
-        "": ["static/jarvis.png"],
+        "jarvis_meme_generator": ["static/jarvis.png"],
     },
     zip_safe=False,
 )

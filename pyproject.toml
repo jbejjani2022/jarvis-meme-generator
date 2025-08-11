@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jarvis-meme-generator"
-version = "1.0.1"
+version = "1.0.4"
 authors = [
     {name = "Joey Bejjani", email = "jbejjani2022@gmail.com"},
 ]
@@ -34,4 +34,4 @@ Repository = "https://github.com/yourusername/jarvis-meme-generator"
 Issues = "https://github.com/yourusername/jarvis-meme-generator/issues"
 
 [project.scripts]
-jarvis = "jarvis_generator:main"
+jarvis = "jarvis_meme_generator:main"
